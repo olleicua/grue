@@ -1,0 +1,25 @@
+#!/usr/local/bin/node
+
+/* INCLUDES */
+
+var util = require('util');
+var path = require('path');
+
+/* UTILITIES */
+
+var print = function() {
+	console.log(util.format.apply(this, arguments));
+}
+
+/* MAIN */
+
+switch (process.argv[2]) {
+case 'setup' :
+	/* create a new grue project at the specified location */
+	var location = path.resolve(process.argv[3]);
+	print('building a new grue project at %s', location);
+	break;
+default :
+	print('usage: %s setup PATH', path.basename(process.argv[1]));
+	break ;
+}
