@@ -4,11 +4,16 @@
 
 var util = require('util');
 var path = require('path');
+var exec = require('child_process').exec
 
 /* UTILITIES */
 
 var print = function() {
 	console.log(util.format.apply(this, arguments));
+}
+
+var shell = function() {
+	exec(util.format.apply(this, arguments));
 }
 
 /* MAIN */
@@ -18,6 +23,12 @@ case 'setup' :
 	/* create a new grue project at the specified location */
 	var location = path.resolve(process.argv[3]);
 	print('building a new grue project at %s', location);
+	shell('mkdir -p %s/state', location);
+	shell('mkdir -p %s/in', location);
+	shell('mkdir -p %s/out', location);
+	shell('mkdir -p %s/view', location);
+	shell('mkdir -p %s/data', location);
+	shell('cp -r %s/lib %s/', __dirname, location);
 	break;
 default :
 	print('usage: %s setup PATH', path.basename(process.argv[1]));
