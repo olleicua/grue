@@ -9,9 +9,9 @@ PAQ (Possibly Asked Questions)
 Q. Why should I use grue?
 
 A. Perhaps you have a great idea for a text adventure game but you aren't very
-good at / very interested in programming.  Or perhaps you like to program can't
-figure out a simple elegant way to program a text adventure.  Either way, grue
-is for you.
+good at / very interested in programming.  Or perhaps you like to program but
+can't figure out a simple elegant way to program a text adventure.  Either way,
+grue is for you.
 
 ---
 
